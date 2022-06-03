@@ -10,6 +10,6 @@ import java.util.List;
 
 @Repository
 public interface CardsRepo extends JpaRepository<Cards, Integer> {
-    List<Cards> findCardsByUserId(Integer id);
+    List<Cards> findCardsByUserId(String id);
     int countCardsByCardNumber(String cardNumber);
 }

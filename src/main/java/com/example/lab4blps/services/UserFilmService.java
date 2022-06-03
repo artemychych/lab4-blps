@@ -20,7 +20,7 @@ public class UserFilmService {
     @Autowired
     private TransactionTemplate transactionTemplate;
 
-    public void addFilmToUser(Integer userId, Integer filmId) {
+    public void addFilmToUser(String userId, Integer filmId) {
         UserFilm userFilm = new UserFilm();
         userFilm.setFilmId(filmId);
         userFilm.setUserId(userId);

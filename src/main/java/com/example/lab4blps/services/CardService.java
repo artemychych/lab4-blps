@@ -18,7 +18,24 @@ public class CardService {
     @Autowired
     private CardsRepo cardsRepo;
 
-    public void modifyCardMoneyIfExist(Integer userId, Films film) {
+
+    public int findMaxMoney(String userId) {
+        List<Cards> cards = cardsRepo.findCardsByUserId(userId);
+
+        int minn = Integer.MAX_VALUE;
+        for (Cards i : cards) {
+            if (i.getMoney() < minn) {
+                minn = i.getMoney();
+            }
+        }
+        if (minn == Integer.MAX_VALUE) {
+            return 0;
+        }
+        return minn;
+
+    }
+
+    public void modifyCardMoneyIfExist(String userId, Films film) {
         List<Cards> cards = cardsRepo.findCardsByUserId(userId);
 
         if (cards.size() == 0) {
@@ -38,7 +55,7 @@ public class CardService {
         }
     }
 
-    public void addCard(String cardNumber, LocalDate cardDateEnd, Integer cardCVC, Integer money, Integer userId) {
+    public void addCard(String cardNumber, LocalDate cardDateEnd, Integer cardCVC, Integer money, String userId) {
 
         if (!checkCardInformation(cardNumber, cardDateEnd, cardCVC, money, userId)) {
             throw new ResourceNotFoundException("Bad data in cardDto");
@@ -57,7 +74,7 @@ public class CardService {
         cardsRepo.save(newCard);
     }
 
-    public boolean checkCardInformation(String cardNumber, LocalDate cardDateEnd, Integer cardCVC, Integer money, Integer userId) {
+    public boolean checkCardInformation(String cardNumber, LocalDate cardDateEnd, Integer cardCVC, Integer money, String userId) {
         String regex_cardNumber = "(^$|[0-9]{16})";
         String regex_cardCVC = "(^$|[0-9]{3})";
 
@@ -76,5 +93,7 @@ public class CardService {
         }
         return true;
     }
+
+
 
 }

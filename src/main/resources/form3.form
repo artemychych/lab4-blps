@@ -4,11 +4,11 @@
       "values": [
         {
           "label": "Да",
-          "value": "1"
+          "value": "true"
         },
         {
           "label": "Нет",
-          "value": "0"
+          "value": "false"
         }
       ],
       "label": "Choose for adding card",

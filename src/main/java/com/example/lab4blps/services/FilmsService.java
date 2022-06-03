@@ -1,12 +1,14 @@
 package com.example.lab4blps.services;
 
 
+import camundajar.impl.scala.Int;
 import com.example.lab4blps.exception.ResourceNotFoundException;
 import com.example.lab4blps.models.Films;
 import com.example.lab4blps.repositories.FilmsRepo;
 import com.example.lab4blps.repositories.GenresRepo;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -32,11 +34,11 @@ public class FilmsService {
     @Autowired
     private TransactionTemplate transactionTemplate;
 
-    public List<Films> getAllFilms() {
-        return filmRepo.findAll();
+    public Films findFilmById(Integer filmId) {
+        Films film = filmRepo.findFilmsById(filmId);
+        return film;
     }
-
-    public String getSelectFilm(Integer userId, Integer filmId) {
+    public String getSelectFilm(String userId, Integer filmId) {
         Films film = filmRepo.findFilmsById(filmId);
         if (film == null) {
             throw new ResourceNotFoundException("Данный фильм не найден в базе данных");
@@ -63,5 +65,17 @@ public class FilmsService {
         log.info("Amount of films :" + filmRepo.count());
         log.info("Amount of genres :" + genresRepo.count());
         log.info("End collecting information! Time: " + formatter.format(new Date()));
+    }
+
+
+    public boolean isFilmFree(Integer filmId){
+        Films film = filmRepo.findFilmsById(filmId);
+        return film.getCost() == 0;
+    }
+
+    public boolean isFilmExist(Integer filmId){
+
+        Films film = filmRepo.findFilmsById(filmId);
+        return film != null;
     }
 }

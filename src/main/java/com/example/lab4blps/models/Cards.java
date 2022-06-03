@@ -37,7 +37,6 @@ public class Cards {
     private Integer money;
 
 
-    @NotNull
     @Column(name = "userId")
-    private Integer userId;
+    private String userId;
 }

@@ -4,7 +4,7 @@
       "label": "Film Id",
       "type": "textfield",
       "id": "Field_0qs35jh",
-      "key": "filmid",
+      "key": "film_id",
       "description": "id for film",
       "validate": {
         "required": true,

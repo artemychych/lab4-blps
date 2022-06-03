@@ -19,11 +19,9 @@ public class UserFilm {
     @Column(name = "id", nullable = false)
     Integer id;
 
-    @NotBlank
     @Column(name = "userId")
-    Integer userId;
+    String userId;
 
-    @NotBlank
     @Column(name = "filmId")
     Integer filmId;
 }

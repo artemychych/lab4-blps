@@ -8,3 +8,10 @@ spring:
     username: sa
     password: sa
     driver-class-name: org.h2.Driver
+camunda.bpm:
+  deployment-resource-pattern:
+    - classpath*:**/*.bpmn
+    - classpath*:**/*.bpmn20.xml
+    - classpath*:**/*.dmn
+    - classpath*:**/*.dmn11.xml
+    - classpath*:**/*.form

@@ -1,0 +1,31 @@
+{
+  "components": [
+    {
+      "label": "Film Id",
+      "type": "textfield",
+      "id": "Field_0qs35jh",
+      "key": "filmid",
+      "description": "id for film",
+      "validate": {
+        "required": true,
+        "minLength": 1
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Select Film",
+      "type": "button",
+      "id": "Field_1i4vr6b",
+      "key": "field_1j17n6u"
+    }
+  ],
+  "type": "default",
+  "id": "form2",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.17.0",
+  "schemaVersion": 4
+}

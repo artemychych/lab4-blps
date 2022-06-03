@@ -1,0 +1,21 @@
+{
+  "components": [
+    {
+      "action": "submit",
+      "label": "Get All Films",
+      "type": "button",
+      "id": "Field_06iyoki",
+      "key": "field_1u4rus9",
+      "properties": {}
+    }
+  ],
+  "type": "default",
+  "id": "form1",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.17.0",
+  "schemaVersion": 4
+}

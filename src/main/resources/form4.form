@@ -1,0 +1,64 @@
+{
+  "components": [
+    {
+      "label": "Card Number",
+      "type": "textfield",
+      "id": "Field_149zmh5",
+      "key": "card_number",
+      "description": "for example: 8888888888888888",
+      "validate": {
+        "required": true,
+        "minLength": 16,
+        "maxLength": 16,
+        "regularExpressionPattern": "(^$|[0-9]{16})"
+      }
+    },
+    {
+      "label": "Card Date End",
+      "type": "textfield",
+      "id": "Field_0dqr0jb",
+      "key": "card_date_end",
+      "description": "for example: 2023-12-21",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "label": "Card CVC",
+      "type": "textfield",
+      "id": "Field_170lrn4",
+      "key": "card_cvc",
+      "description": "for example: 114",
+      "validate": {
+        "required": true,
+        "minLength": 3,
+        "maxLength": 3
+      }
+    },
+    {
+      "label": "Money",
+      "type": "textfield",
+      "id": "Field_1w64hqg",
+      "key": "money",
+      "validate": {
+        "required": true
+      }
+    },
+    {
+      "action": "submit",
+      "label": "Add Card",
+      "type": "button",
+      "id": "Field_1bp0r7q",
+      "key": "field_10ncwq6"
+    }
+  ],
+  "type": "default",
+  "id": "form4",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.17.0",
+  "schemaVersion": 4
+}

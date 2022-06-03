@@ -1,0 +1,40 @@
+{
+  "components": [
+    {
+      "values": [
+        {
+          "label": "Да",
+          "value": "1"
+        },
+        {
+          "label": "Нет",
+          "value": "0"
+        }
+      ],
+      "label": "Choose for adding card",
+      "type": "radio",
+      "id": "Field_0bj886u",
+      "key": "choose_to_add",
+      "validate": {
+        "required": true
+      },
+      "description": "Do you need to add the new card?"
+    },
+    {
+      "action": "submit",
+      "label": "Submit",
+      "type": "button",
+      "id": "Field_1pl2w63",
+      "key": "field_0v4jc9k"
+    }
+  ],
+  "type": "default",
+  "id": "form3",
+  "exporter": {
+    "name": "Camunda Modeler",
+    "version": "5.0.0"
+  },
+  "executionPlatform": "Camunda Platform",
+  "executionPlatformVersion": "7.17.0",
+  "schemaVersion": 4
+}
